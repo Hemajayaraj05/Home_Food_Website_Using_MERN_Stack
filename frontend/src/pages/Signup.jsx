@@ -1,8 +1,14 @@
 import React, { useState } from "react";
-import { Button } from "@blueprintjs/core";
+import axios from 'axios'
+import { Button,Toaster,Position,Intent} from "@blueprintjs/core";
 import {useNavigate} from 'react-router-dom'
+import {Link} from "react-router-dom"
+const AppToaster=Toaster.create({
+    position:Position.TOP,
+})
 
 function SignUp(){
+   
     const navigate=useNavigate();
 
     const [userName,setuserName]=useState("");
@@ -10,8 +16,40 @@ function SignUp(){
     const [userpass,setuserPass]=useState("");
     const [usertype,setUsertype]=useState("");
 
-    const handleSubmit=()=>{
-          navigate('/login');
+    const handleSubmit=async()=>{
+         if(!userName || !userEmail ||!userpass ||!usertype)
+         {
+            AppToaster.show({
+                message:"Please Fill up All the fields",
+                timeout:3000,
+                intent:Intent.WARNING
+            })
+         }
+         try{
+            const response=await axios.post("http://localhost:3000/api/auth/signup",{
+                name:userName,
+                email:userEmail,
+                password:userpass,
+                usertype:usertype
+
+            });
+             console.log(response)
+            AppToaster.show({
+                message:"Registration Success!",
+                intent:Intent.SUCCESS
+            })
+            navigate('/login');
+
+         }
+         catch(err){
+            console.log(err)
+            AppToaster.show({
+                message:"Registration Failed",
+                intent:Intent.DANGER
+            })
+         }
+          
+          
     }
 
     return (
@@ -38,7 +76,7 @@ function SignUp(){
                 onChange={(e)=>setuserPass(e.target.value)}/>
                 
                 <div className="flex flex-row gap-5 ">
-                {["Cook","User"].map((option)=><label className="flex flex-row gap-2" key={option}>
+                {["cook","user"].map((option)=><label className="flex flex-row gap-2" key={option}>
                 <input type="radio"
                 value={option}
                 checked={usertype===option}
@@ -48,7 +86,7 @@ function SignUp(){
                 )}  
                 </div> 
 
-                <p>Already have an Account? <a href="#">Login</a></p>
+                <p>Already have an Account? <Link to ="/login">Login</Link></p>
 
               <Button
                onClick={handleSubmit}
