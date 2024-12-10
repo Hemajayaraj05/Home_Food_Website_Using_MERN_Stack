@@ -22,6 +22,7 @@ app.use(cors({
 
 
 app.use('/api/auth', authroutes);
+app.use('/api/auth/dash',authroutes);
 
 
 

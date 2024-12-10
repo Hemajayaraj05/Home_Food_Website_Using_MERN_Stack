@@ -32,6 +32,7 @@ function Login(){
                "Content-Type":"application/json"
             }
          });
+         const { token } = response.data;
             if(response.data.usertype==='user')
             {
                AppToaster.show({
@@ -39,7 +40,8 @@ function Login(){
                   timeout: 3000,
                   intent: Intent.SUCCESS,
                })
-               navigate('/user/dash')
+               localStorage.setItem('authToken', token);
+               navigate('/dash/user')
             }
             else if(response.data.usertype==='cook')
             {
@@ -48,7 +50,7 @@ function Login(){
                   timeout: 3000,
                   intent: Intent.SUCCESS,
                })
-               navigate('/cook/dash')
+               navigate('/dash/cook')
             }
             else
             {

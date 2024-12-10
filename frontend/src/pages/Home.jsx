@@ -5,16 +5,11 @@ import About from "../components/About";
 import Contact from "../components/Contact";
 
 function Home(){
-    return <section className="flex flex-col overflow-auto scrollbar-hide">
-       
+    return <section className="flex flex-col">
         <Navbar/>
         <Content/>
         <About/>
         <Contact/>
-       
-   
-    
-    
     </section>
     
 }

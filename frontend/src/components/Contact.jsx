@@ -16,7 +16,7 @@ function  Contact(){
         <section className="flex justify-between h-[400px] w-full   bg-gray-700">
             <div className="flex flex-row  w-1/2">
                 <div className="flex justify-center items-center w-full  bg-gray-700 m-5 p-1">
-                    <div className="flex flex-col gap-2 relative group justify-center items-center  bg-black/25  w-full h-full ">
+                    <div className="flex flex-col gap-2 relative group justify-center items-center   w-full h-full ">
                     <div className="flex  pb-11"><h1 className="text-white "><i>Follow Us On</i></h1></div>
                     <div className="flex flex-row gap-10 relative group justify-center items-center ">
                     
@@ -50,7 +50,7 @@ function  Contact(){
            </div>
 
             <div  className="flex box-border border-2   border-gray-700 w-1/2 bg-gray-700">
-                <div className="flex flex-col gap-5 justify-center items-center box-border border-2 border-gray-700 m-6 p-4 w-full  bg-black/20">
+                <div className="flex flex-col gap-5 justify-center items-center box-border border-2 border-gray-700 m-6 p-4 w-full ">
                     <h1 className="text-white"><i>For Any Queries</i></h1>
                     <input 
                     type="text"

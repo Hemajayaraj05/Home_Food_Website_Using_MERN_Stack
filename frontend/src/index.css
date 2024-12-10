@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 
-.bg-primary {
+/* .bg-primary {
   @apply bg-red-600;
-}
+} */
 
 .mobile-nav li {
   @apply  border-white text-center ;
@@ -18,16 +18,14 @@
   -webkit-text-stroke: 1px black; /* You can adjust the width and color */
   color: white;
 }
-/* Add this in your Tailwind CSS file */
-@layer utilities {
-  .scrollbar-hide {
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-    scrollbar-width: none; /* Firefox */
-  }
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, and Opera */
-  }
+.scrollbar-hidden::-webkit-scrollbar{
+  display:none;
 }
+.scrollbar-hidden{
+  -ms-overflow-style: none;
+  scrollbar-width:none;
+}
+
 
 
 
