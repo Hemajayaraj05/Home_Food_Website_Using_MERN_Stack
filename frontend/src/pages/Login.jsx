@@ -50,6 +50,7 @@ function Login(){
                   timeout: 3000,
                   intent: Intent.SUCCESS,
                })
+               localStorage.setItem('authToken', token);
                navigate('/dash/cook')
             }
             else

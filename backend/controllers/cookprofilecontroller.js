@@ -12,17 +12,12 @@ exports.cookprofile=async(req,res)=>{
         
         if (existingUser) {
         
-                const  newProfile=new registerModel
-                ({
-                    name,
-                    serviceName,
-                    priceRange,
-                    location,
-                    foodType,
-
-                })
-
-                await newProfile.save();
+            existingUser.serviceName = serviceName;
+            existingUser.priceRange = priceRange;
+            existingUser.location = location;
+            existingUser.foodType = foodType;
+    
+            await existingUser.save();
                 res.status(201).json({message:"Profile Created Successfully"});
           
       

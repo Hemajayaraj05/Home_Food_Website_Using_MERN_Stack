@@ -16,10 +16,10 @@ const registerSchema = new mongoose.Schema({
     },
     //Cook-profile-details
     
-    serviceName:{ type: String, required: true },
-    priceRange:{ type: String, required: true },
-    location:{ type: String, required: true },
-    foodType:{ type: String, required: true },
+    serviceName:{ type: String },
+    priceRange:{ type: String},
+    location:{ type: String },
+    foodType:{ type: String},
 });
 
 const registerModel = mongoose.model('RegisterdUserAndCook', registerSchema);

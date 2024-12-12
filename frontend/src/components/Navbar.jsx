@@ -3,11 +3,16 @@ import { VscThreeBars } from "react-icons/vsc";
 import Logoimg from "/src/assets/Logoimg-removebg-preview.png";
 import {Link} from "react-router-dom"
 
-function Navbar() {
+function Navbar({backgroundcolor}) {
+  const navbarstyle={
+    backgroundColor:backgroundcolor||"none",
+    color:"white",
+
+  }
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
-    <header className="flex justify-between bg-primary items-center text-white font-semibold px-4 py-2 relative   bg-black/20">
+    <header className="flex justify-between items-center text-white font-semibold px-4 py-2 relative   bg-black/20" style={navbarstyle}>
      
       <div className="ml-11">
         <img src={Logoimg}  alt="Logo" className="h-8 rounded-sm w-[70px]"/>
@@ -16,7 +21,7 @@ function Navbar() {
 
   
       <div className="hidden md:block text-white mr-11">
-        <nav>
+        <nav >
           <ul className="flex gap-10">
             <li><Link to="/home" className="text-white">Home</Link></li>
             <li><Link to="/about" className="text-white">About</Link></li>

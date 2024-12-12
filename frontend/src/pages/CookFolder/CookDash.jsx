@@ -57,7 +57,7 @@ function CookDash() {
                 message: "Profile Created Successfully",
                 intent: Intent.SUCCESS
             });
-            navigate('/add-items');
+           
         } catch (err) {
             console.error("Error creating profile:", err);
             AppToaster.show({
@@ -66,34 +66,38 @@ function CookDash() {
             });
         }
     }
+    const handleAddItems=()=>{
+        navigate('/add-items');
+
+    }
 
     return (
         <div className="flex flex-col">
-            <Navbar />
+              <Navbar backgroundcolor="rgb(200, 0, 0)" />
             <div className="flex flex-row w-full h-screen">
                 <div className="flex w-1/2">
                     <img className="flex h-screen w-full" src="/Foodie.jpg" alt="Image of the foodie" />
                 </div>
-                <div className="flex justify-center items-center w-1/2">
-                    <form className="flex p-4 pt-9 drop-shadow-lg shadow-lg bg-white rounded-xl">
+                <div className="flex flex-col justify-center items-center w-1/2">
+                    <form className="flex p-4 pt-9 drop-shadow-lg shadow-lg shadow-red-500 bg-white rounded-xl">
                         <div className="flex flex-col gap-5">
                             <input
                                 type="text"
                                 name="name"
-                                className="flex text-center text-black w-full px-[100px] py-2 border-2 border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
+                                className="flex text-center text-black w-full px-[100px] py-2 border-2 border-blue-950 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 drop-shadow-lg shadow-lg"
                                 placeholder="Name"
                                 value={form.name}
                                 onChange={handleChange} />
                             <input
                                 type="text"
-                                className="flex text-center text-black w-full px-4 py-2 border-2 border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
+                                className="flex text-center text-black w-full px-4 py-2 border-2  border-blue-950  rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 drop-shadow-lg shadow-lg"
                                 name="serviceName"
                                 value={form.serviceName}
                                 placeholder="Enter Name of your Service"
                                 onChange={handleChange} />
                             <input
                                 type="text"
-                                className="flex text-center text-black w-full px-4 py-2 border-2 border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
+                                className="flex text-center text-black w-full px-4 py-2 border-2  border-blue-950  rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 drop-shadow-lg shadow-lg"
                                 name="priceRange"
                                 placeholder="Price Range"
                                 value={form.priceRange}
@@ -101,7 +105,7 @@ function CookDash() {
                             <input
                                 type="text"
                                 name="location"
-                                className="flex text-center text-black w-full px-4 py-2 border-2 border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
+                                className="flex text-center text-black w-full px-4 py-2 border-2  border-blue-950  rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 drop-shadow-lg shadow-lg"
                                 placeholder="Location"
                                 value={form.location}
                                 onChange={handleChange} />
@@ -110,17 +114,27 @@ function CookDash() {
                                 name="foodType"
                                 value={form.foodType}
                                 onChange={handleChange}
-                                className="flex text-center text-black w-full px-4 py-2 border-2 border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500">
+                                className="flex text-center text-black w-full px-4 py-2 border-2 border-blue-950 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 drop-shadow-lg shadow-lg">
                                 <option value="">Select Type of Food</option>
                                 <option value="Veg">Veg</option>
                                 <option value="Non-Veg">Non-Veg</option>
                             </select>
 
                             <div className="flex justify-center items-center gap-5 mt-4">
-                                <Button onClick={handleSubmit} className="bg-[#FAD03D] px-7 py-2">Create Profile</Button>
+                            <Button
+                                onClick={handleSubmit}
+                                intent="success"
+                                className="w-50 h-11 button text-black">Create Profile</Button>
                             </div>
+                            
                         </div>
                     </form>
+                        <div className="flex justify-center items-center gap-5 mt-4">
+                                <Button
+                                onClick={handleAddItems}
+                                intent="success"
+                                className="w-50 h-11 button text-black">Add Items👨‍🍳</Button>
+                            </div>
                 </div>
             </div>
         </div>
