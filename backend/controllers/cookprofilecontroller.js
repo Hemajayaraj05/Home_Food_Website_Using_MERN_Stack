@@ -33,3 +33,27 @@ exports.cookprofile=async(req,res)=>{
     }
 
 }
+
+exports.addFoodItems = async (req, res) => {
+    const { userId, description } = req.body;
+    const imagePath = req.file ? req.file.path : null;
+
+    try {
+        const user = await registerModel.findById(userId);
+        if (!user) {
+            return res.status(404).json({ message: 'User Not Found' });
+        }
+        const foodItemData = {
+            day: req.body.day,
+            mealtype: req.body.mealType,
+            description,
+            image: imagePath,
+        };
+        user.foodItems.push(foodItemData);
+        await user.save();
+        res.status(201).json({ message: "Food Item added Successfully" });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Error adding food items" });
+    }
+};

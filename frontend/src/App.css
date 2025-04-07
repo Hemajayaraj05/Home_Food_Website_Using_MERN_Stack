@@ -1,0 +1,20 @@
+/* Hide the scrollbar for all browsers but keep scrolling */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* Keep scrolling enabled */
+    height: 100%; /* Ensure it works across all devices */
+  }
+  
+  /* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+  body::-webkit-scrollbar {
+    width: 0px; /* Removes scrollbar width */
+    background: transparent; /* Optional: Make it transparent */
+  }
+  
+  /* Hide scrollbar for Firefox */
+  body {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+  }
+  

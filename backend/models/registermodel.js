@@ -1,5 +1,13 @@
 const mongoose = require('mongoose');
 
+
+const foodItemSchema=new mongoose.Schema({
+    day:{type:String},
+    mealtype:{type:String},
+    description:{type:String},
+    image:{type:String},
+})
+
 const registerSchema = new mongoose.Schema({
     name: { type: String, required: true },
     email: { 
@@ -20,6 +28,10 @@ const registerSchema = new mongoose.Schema({
     priceRange:{ type: String},
     location:{ type: String },
     foodType:{ type: String},
+
+    foodItems:[foodItemSchema]
+
+    
 });
 
 const registerModel = mongoose.model('RegisterdUserAndCook', registerSchema);
