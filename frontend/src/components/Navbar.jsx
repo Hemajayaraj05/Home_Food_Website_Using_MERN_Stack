@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { VscThreeBars } from "react-icons/vsc";
-import Logoimg from "/src/assets/Logoimg-removebg-preview.png";
+import cook from "/src/assets/cook-removebg-preview.png";
 import {Link} from "react-router-dom"
 
 function Navbar({backgroundcolor}) {
@@ -14,15 +14,18 @@ function Navbar({backgroundcolor}) {
   return (
     <header className="flex justify-between items-center text-white font-semibold px-4 py-2 relative   bg-black/20" style={navbarstyle}>
      
-      <div className="ml-11">
-        <img src={Logoimg}  alt="Logo" className="h-9 rounded-sm w-[70px]"/>
-        
+      <div className="flex flex-row ml-11 ">
+        <img src={cook}  alt="Logo" className="h-[10vh] rounded-sm w-[30px]"/>
+       
+      <h2 className="flex flex-row mt-8 ">COMFORT CRAVE</h2>
       </div>
 
   
       <div className="hidden md:block text-white mr-11">
+
         <nav >
           <ul className="flex gap-10">
+          
             <li><Link to="/home" className="text-white">Home</Link></li>
             <li><Link to="/about" className="text-white">About</Link></li>
             <li><Link to="/contact" className="text-white">Contact</Link></li>

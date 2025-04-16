@@ -40,7 +40,7 @@ const UserDash= () => {
           >
             <div className="w-1/4 flex justify-center">
               <img
-                src={`https://randomuser.me/api/portraits/women/${index + 1}.jpg`}
+                src={`https://randomuser.me/api/portraits/women/${index + 8}.jpg`}
                 className="border-2 border-gray-400 rounded-full w-20 h-20 object-cover"
                 alt={cook.name}
               />
