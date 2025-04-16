@@ -47,9 +47,9 @@ function CookDash() {
             }
 
             const response = await axios.post(
-                "http://localhost:3000/api/auth/dash/cook",
+                "http://localhost:3000/api/auth/cook",
                 form,
-                { headers: { Authorization: token } }
+                { headers: { Authorization: `Bearer ${token}` } }
             );
 
             console.log(response);
@@ -79,7 +79,7 @@ function CookDash() {
                     <img className="flex h-screen w-full" src="/Foodie.jpg" alt="Image of the foodie" />
                 </div>
                 <div className="flex flex-col justify-center items-center w-1/2">
-                    <form className="flex p-4 pt-9 drop-shadow-lg shadow-lg shadow-blue-500 bg-white rounded-xl">
+                    <form className="flex p-4 pt-9 drop-shadow-lg shadow-lg  bg-white rounded-xl">
                         <div className="flex flex-col gap-5">
                             <input
                                 type="text"

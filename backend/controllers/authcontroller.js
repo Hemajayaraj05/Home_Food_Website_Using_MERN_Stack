@@ -49,7 +49,16 @@ exports.loginuser=async(req,res)=>{
         }
 
         const token = jwt.sign({ id: findUser._id, name: findUser.name }, process.env.JWT_SECRET, { expiresIn: '24h' });
-        res.status(200).json({token,usertype:findUser.usertype});
+        res.status(200).json({
+            token,
+            usertype: findUser.usertype,
+            user: {
+              _id: findUser._id,
+              name: findUser.name,
+              email: findUser.email,
+            },
+          });
+          
     }
     catch(err){
         console.error('Invalid User Credentials!',err);

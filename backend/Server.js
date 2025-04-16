@@ -15,14 +15,15 @@ connectDatabase();
 
 app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:5173', 
+    origin: '*', 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }));
 
 
 app.use('/api/auth', authroutes);
-app.use('/api/auth/dash', authroutes);
+app.use(express.static(path.join(__dirname, "public")));
 
+app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
 
 app.listen(process.env.PORT, () => {
     console.log(`Server listening on port ${process.env.PORT}`);

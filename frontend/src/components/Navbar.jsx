@@ -15,7 +15,7 @@ function Navbar({backgroundcolor}) {
     <header className="flex justify-between items-center text-white font-semibold px-4 py-2 relative   bg-black/20" style={navbarstyle}>
      
       <div className="ml-11">
-        <img src={Logoimg}  alt="Logo" className="h-8 rounded-sm w-[70px]"/>
+        <img src={Logoimg}  alt="Logo" className="h-9 rounded-sm w-[70px]"/>
         
       </div>
 

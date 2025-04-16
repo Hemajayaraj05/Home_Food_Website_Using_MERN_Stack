@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import CookDash from './pages/CookFolder/CookDash';
 import UserDash from './pages/UserFolder/UserDash';
 import AddItem from './pages/CookFolder/AddItems';
+import ViewMenu from './pages/UserFolder/ViewMenu';
 
 
 
@@ -26,6 +27,7 @@ function App(){
             <Route path='/dash/user' element={<UserDash/>}/>
             <Route path="/dash/cook" element={<CookDash/>}/>
             <Route path='/add-items' element={<AddItem/>}/>
+            <Route path="/viewmenu"  element={<ViewMenu/>}/>
 
 
         </Routes>
